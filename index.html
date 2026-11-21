@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Store — Akun Premium Murah & Bergaransi | homestore.my.id</title>
+<meta name="description" content="Home Store — toko akun premium murah & bergaransi. Netflix, YouTube, Spotify, Canva, CapCut, ChatGPT, Gemini, TikTok. Order otomatis 24/7 lewat bot Telegram, pembayaran QRIS.">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif; }
+  body { background:#e9edf2; color:#1a1a1a; }
+  .wrap { max-width:480px; margin:0 auto; background:#f7f8fa; min-height:100vh; box-shadow:0 0 24px rgba(0,0,0,.10); }
+  @media (min-width:900px){ .wrap{ max-width:880px; } }
+  header { display:flex; align-items:center; gap:10px; padding:14px 16px 10px; }
+  header img.logo { width:46px; height:46px; border-radius:50%; }
+  header .name { font-weight:800; font-size:19px; letter-spacing:.4px; }
+  header .tag { font-size:11.5px; color:#5a5a5a; }
+  header .btn { margin-left:auto; background:#0a6edc; color:#fff; text-decoration:none; font-weight:700; font-size:13px; padding:9px 14px; border-radius:999px; white-space:nowrap; }
+  .search { margin:2px 16px 12px; background:#fff; border:1px solid #e2e5ea; border-radius:999px; padding:0 16px; display:flex; align-items:center; }
+  .search input { border:0; outline:0; font-size:13.5px; padding:11px 0; width:100%; background:transparent; color:#1a1a1a; }
+  .banner { margin:0 16px; border-radius:18px; overflow:hidden; position:relative; height:210px; }
+  .banner img { width:100%; height:100%; object-fit:cover; display:block; }
+  .banner .ov { position:absolute; left:0; top:0; bottom:0; width:64%; padding:18px 16px; display:flex; flex-direction:column; justify-content:center;
+    background:linear-gradient(90deg, rgba(4,32,66,.74), rgba(4,32,66,0)); color:#fff; }
+  .banner .ov .k { font-size:11px; font-weight:700; letter-spacing:2px; color:#7fd0ff; }
+  .banner .ov h1 { font-size:24px; line-height:1.15; margin:6px 0; font-weight:900; }
+  .banner .ov p { font-size:12.5px; opacity:.92; }
+  .banner .ov a { margin-top:12px; align-self:flex-start; background:#ffb300; color:#221a00; font-weight:800; font-size:13px; text-decoration:none; padding:9px 16px; border-radius:999px; }
+  h2 { font-size:17px; margin:22px 16px 4px; }
+  .sub { font-size:12.5px; color:#5a5a5a; margin:0 16px 12px; line-height:1.45; }
+  .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding:0 16px; }
+  .tile { background:#fff; border:1px solid #e6e9ee; border-radius:14px; padding:14px 4px 11px; text-align:center; text-decoration:none; color:#1a1a1a; display:block; }
+  .tile img { width:42px; height:42px; object-fit:contain; }
+  .tile .n { font-size:12px; font-weight:700; margin-top:7px; }
+  .tile .p { font-size:10px; color:#0a6edc; font-weight:700; margin-top:2px; }
+  .empty { display:none; text-align:center; color:#8a8f98; font-size:13px; padding:14px 16px 0; }
+  .steps { padding:0 16px; display:grid; gap:10px; }
+  .step { background:#fff; border:1px solid #e6e9ee; border-radius:14px; padding:13px 14px; display:flex; gap:12px; align-items:flex-start; }
+  .step .no { background:#0a6edc; color:#fff; font-weight:800; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; flex:none; }
+  .step .h { font-weight:800; font-size:13.5px; }
+  .step .d { font-size:12px; color:#5a5a5a; margin-top:2px; line-height:1.45; }
+  .pay { margin:0 16px; background:#fff; border:1px solid #e6e9ee; border-radius:16px; padding:16px; }
+  .pay .qris-head { display:flex; align-items:center; gap:10px; }
+  .pay .qris-badge { background:#d8232a; color:#fff; font-weight:900; font-style:italic; padding:5px 12px; border-radius:8px; font-size:15px; letter-spacing:.5px; }
+  .pay .merch { font-weight:800; font-size:14px; }
+  .pay .nmid { font-size:12px; color:#5a5a5a; }
+  .pay ul { margin:12px 0 0 18px; font-size:12.5px; color:#333; line-height:1.65; }
+  .pay .warn { margin-top:12px; background:#fff7e0; border:1px solid #ffe08a; border-radius:10px; padding:10px 12px; font-size:12px; line-height:1.5; color:#5c4a00; }
+  .trust { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; padding:0 16px; }
+  @media (min-width:900px){ .trust{ grid-template-columns:repeat(4,1fr); } }
+  .trust .t { background:#fff; border:1px solid #e6e9ee; border-radius:14px; padding:13px 10px; text-align:center; }
+  .trust .ic { font-size:21px; }
+  .trust .h { font-size:12px; font-weight:800; margin-top:5px; }
+  .trust .d { font-size:10.5px; color:#5a5a5a; margin-top:2px; line-height:1.4; }
+  .faq { padding:0 16px; display:grid; gap:10px; }
+  .faq .q { background:#fff; border:1px solid #e6e9ee; border-radius:14px; padding:13px 14px; }
+  .faq .h { font-weight:800; font-size:13px; }
+  .faq .d { font-size:12px; color:#5a5a5a; margin-top:3px; line-height:1.5; }
+  .cta { margin:20px 16px 8px; background:linear-gradient(135deg,#0a6edc,#083e7a); color:#fff; border-radius:18px; padding:20px 18px; text-align:center; }
+  .cta h3 { font-size:17px; }
+  .cta p { font-size:12.5px; opacity:.92; margin:6px 0 14px; line-height:1.5; }
+  .cta a { background:#fff; color:#0a6edc; font-weight:800; font-size:14px; text-decoration:none; padding:11px 22px; border-radius:999px; display:inline-block; }
+  footer { text-align:center; color:#8a8f98; font-size:11.5px; padding:16px 16px 24px; line-height:1.7; }
+  footer a { color:#0a6edc; text-decoration:none; font-weight:700; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img class="logo" src="assets/logo-pp-biru.png" alt="Home Store">
+    <div>
+      <div class="name">HOME STORE</div>
+      <div class="tag">Akun premium murah &amp; bergaransi</div>
+    </div>
+    <a class="btn" href="https://t.me/homestore_idbot" target="_blank" rel="noopener">Order di Bot</a>
+  </header>
+
+  <div class="search"><input id="q" type="text" placeholder="Cari aplikasi premium… (Netflix, Canva, CapCut)"></div>
+
+  <section class="banner">
+    <img src="assets/banner-anime.webp" alt="Home Store — Semua Premium Ada di Sini">
+    <div class="ov">
+      <div class="k">TOKO AKUN PREMIUM</div>
+      <h1>Semua Premium<br>Ada di Sini!</h1>
+      <p>Order otomatis 24/7, akun langsung terkirim.</p>
+      <a href="https://t.me/homestore_idbot" target="_blank" rel="noopener">Mulai Order →</a>
+    </div>
+  </section>
+
+  <h2>Katalog Aplikasi Premium</h2>
+  <p class="sub">Harga &amp; stok selalu yang terbaru di bot Telegram kami — klik produk untuk langsung order.</p>
+  <div class="grid" id="grid">
+    <a class="tile" data-name="netflix" href="https://t.me/homestore_idbot" target="_blank" rel="noopener"><img src="assets/netflix.svg" alt="Netflix"><div class="n">Netflix</div><div class="p">Cek Harga &amp; Stok</div></a>
+    <a class="tile" data-name="youtube premium" href="https://t.me/homestore_idbot" target="_blank" rel="noopener"><img src="assets/youtube.svg" alt="YouTube Premium"><div class="n">YouTube</div><div class="p">Cek Harga &amp; Stok</div></a>
+    <a class="tile" data-name="spotify premium" href="https://t.me/homestore_idbot" target="_blank" rel="noopener"><img src="assets/spotify.svg" alt="Spotify Premium"><div class="n">Spotify</div><div class="p">Cek Harga &amp; Stok</div></a>
+    <a class="tile" data-name="canva pro" href="https://t.me/homestore_idbot" target="_blank" rel="noopener"><img src="assets/canva.svg" alt="Canva Pro"><div class="n">Canva</div><div class="p">Cek Harga &amp; Stok</div></a>
+    <a class="tile" data-name="capcut pro" href="https://t.me/homestore_idbot" target="_blank" rel="noopener"><img src="assets/capcut.png" alt="CapCut Pro"><div class="n">CapCut</div><div class="p">Cek Harga &amp; Stok</div></a>
+    <a class="tile" data-name="chatgpt openai" href="https://t.me/homestore_idbot" target="_blank" rel="noopener"><img src="assets/openai.svg" alt="ChatGPT"><div class="n">ChatGPT</div><div class="p">Cek Harga &amp; Stok</div></a>
+    <a class="tile" data-name="gemini google ai" href="https://t.me/homestore_idbot" target="_blank" rel="noopener"><img src="assets/googlegemini.svg" alt="Gemini"><div class="n">Gemini</div><div class="p">Cek Harga &amp; Stok</div></a>
+    <a class="tile" data-name="tiktok" href="https://t.me/homestore_idbot" target="_blank" rel="noopener"><img src="assets/tiktok.svg" alt="TikTok"><div class="n">TikTok</div><div class="p">Cek Harga &amp; Stok</div></a>
+  </div>
+  <div class="empty" id="empty">Produk tidak ditemukan. Coba kata kunci lain, atau cek langsung di bot.</div>
+
+  <h2>Cara Order</h2>
+  <p class="sub">Semua order diproses otomatis oleh bot Telegram Home Store.</p>
+  <div class="steps">
+    <div class="step"><div class="no">1</div><div><div class="h">Buka Bot Telegram</div><div class="d">Klik tombol order di halaman ini atau buka <b>t.me/homestore_idbot</b>, lalu tekan /start.</div></div></div>
+    <div class="step"><div class="no">2</div><div><div class="h">Deposit Saldo</div><div class="d">Isi saldo lewat menu Deposit — minimal Rp5.000 — bayar memakai QRIS yang muncul di bot, atau transfer SeaBank (lihat bagian Pembayaran).</div></div></div>
+    <div class="step"><div class="no">3</div><div><div class="h">Pilih Produk</div><div class="d">Buka LIST PRODUCT di bot, pilih aplikasi premium dan paket yang kamu mau.</div></div></div>
+    <div class="step"><div class="no">4</div><div><div class="h">Akun Terkirim Otomatis</div><div class="d">Setelah pembayaran saldo berhasil, detail akun langsung dikirim otomatis oleh bot.</div></div></div>
+  </div>
+
+  <h2>Pembayaran</h2>
+  <p class="sub">Kami hanya menerima pembayaran resmi berikut. Di luar ini, bukan tanggung jawab kami.</p>
+  <div class="pay">
+    <div class="qris-head">
+      <div class="qris-badge">QRIS</div>
+      <div>
+        <div class="merch">HOME STORE</div>
+        <div class="nmid">NMID: ID1025428841312</div>
+      </div>
+    </div>
+    <ul>
+      <li>Bisa dibayar dari semua e-wallet (DANA, OVO, GoPay, ShopeePay) dan mobile banking yang mendukung QRIS.</li>
+      <li>Kode QRIS untuk deposit terbit otomatis di dalam bot Telegram sesuai nominal kamu — nominalnya sudah tercetak di kode QR, jadi tidak perlu input nominal manual.</li>
+      <li>Minimal deposit Rp5.000.</li>
+    </ul>
+    <div class="warn">⚠️ <b>Penting:</b> sebelum membayar, pastikan nama merchant yang muncul di aplikasi pembayaran kamu adalah <b>HOME STORE</b> dengan NMID <b>ID1025428841312</b>. Kami tidak punya nomor e-wallet lain untuk pembayaran manual — pembayaran hanya lewat QRIS di bot resmi <b>@homestore_idbot</b> atau transfer SeaBank resmi di bawah.</div>
+    <div class="qris-head" style="margin-top:16px;">
+      <div class="qris-badge" style="background:#0a6edc;">SeaBank</div>
+      <div>
+        <div class="merch">901878674860</div>
+        <div class="nmid">a.n. HAMBALI</div>
+      </div>
+    </div>
+    <ul>
+      <li>Transfer ke SeaBank <b>901878674860</b> a.n. <b>HAMBALI</b> — satu-satunya rekening bank resmi Home Store.</li>
+      <li>Setelah transfer, konfirmasi ke admin lewat menu chat admin (/pm) di bot @homestore_idbot dengan mengirim bukti transfer — saldo ditambahkan manual oleh admin.</li>
+    </ul>
+  </div>
+
+  <h2>Kenapa Pilih Home Store?</h2>
+  <div class="trust">
+    <div class="t"><div class="ic">🤖</div><div class="h">Order Otomatis 24/7</div><div class="d">Pesan lewat bot Telegram kapan saja, langsung diproses.</div></div>
+    <div class="t"><div class="ic">⚡</div><div class="h">Terkirim Otomatis</div><div class="d">Akun langsung dikirim otomatis setelah pembayaran.</div></div>
+    <div class="t"><div class="ic">🛡️</div><div class="h">Garansi Masa Aktif</div><div class="d">Ada kendala selama masa aktif? Ada garansi penggantian.</div></div>
+    <div class="t"><div class="ic">💰</div><div class="h">Lebih Hemat</div><div class="d">Harga jauh lebih bersahabat dari langganan resmi.</div></div>
+  </div>
+
+  <h2>Tanya Jawab</h2>
+  <div class="faq">
+    <div class="q"><div class="h">Bagaimana cara membayar?</div><div class="d">Hanya lewat QRIS yang terbit otomatis di bot Telegram @homestore_idbot saat kamu deposit. Pastikan nama merchant-nya HOME STORE (NMID ID1025428841312).</div></div>
+    <div class="q"><div class="h">Berapa lama akun dikirim?</div><div class="d">Otomatis — detail akun dikirim bot segera setelah pembayaran saldo terkonfirmasi dan kamu menyelesaikan pembelian produk di bot.</div></div>
+    <div class="q"><div class="h">Kalau akun bermasalah bagaimana?</div><div class="d">Selama masih dalam masa aktif, akun bergaransi penggantian. Hubungi admin lewat menu chat admin (/pm) di bot dengan menyertakan detail order kamu.</div></div>
+    <div class="q"><div class="h">Apakah bisa bayar transfer bank?</div><div class="d">Bisa — satu-satunya rekening resmi kami SeaBank <b>901878674860</b> a.n. <b>HAMBALI</b>. Setelah transfer, konfirmasi ke admin lewat menu chat admin (/pm) di bot dengan bukti transfer. Waspada pihak yang mengaku Home Store dan meminta transfer ke rekening lain.</div></div>
+  </div>
+
+  <section class="cta">
+    <h3>Siap Order?</h3>
+    <p>Buka bot Telegram Home Store, deposit via QRIS, dan akun premium kamu langsung meluncur.</p>
+    <a href="https://t.me/homestore_idbot" target="_blank" rel="noopener">Buka Bot Telegram</a>
+  </section>
+
+  <footer>
+    © 2026 Home Store — homestore.my.id<br>
+    Bot: <a href="https://t.me/homestore_idbot" target="_blank" rel="noopener">@homestore_idbot</a> · Channel: <a href="https://t.me/home_store_id" target="_blank" rel="noopener">@home_store_id</a> · Instagram: <a href="https://www.instagram.com/homestore_idbot" target="_blank" rel="noopener">@homestore_idbot</a>
+  </footer>
+</div>
+<script>
+  var q = document.getElementById('q'), tiles = document.querySelectorAll('.tile'), empty = document.getElementById('empty');
+  q.addEventListener('input', function(){
+    var v = q.value.trim().toLowerCase(), shown = 0;
+    tiles.forEach(function(t){
+      var hit = !v || t.getAttribute('data-name').indexOf(v) >= 0;
+      t.style.display = hit ? 'block' : 'none';
+      if (hit) shown++;
+    });
+    empty.style.display = shown ? 'none' : 'block';
+  });
+</script>
+</body>
+</html>
